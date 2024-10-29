@@ -10,7 +10,8 @@ public class FileSplitter {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Masukkan nama file: ");
+        System.out.println("contoh alamat file (C:\\test.txt)");
+        System.out.print("Masukkan alamat file: ");
         String fileName = scanner.nextLine();
 
         System.out.print("Masukkan jumlah baris per bagian: ");
@@ -38,9 +39,8 @@ public class FileSplitter {
             }
 
         } catch (IOException e) {
-            System.out.println("Terjadi kesalahan saat membaca file: " + e.getMessage());
+            System.out.println("Tidak dapat membaca file: " + e.getMessage());
         }
-
         scanner.close();
     }
 
@@ -51,7 +51,7 @@ public class FileSplitter {
             while (!queue.isEmpty()) {
                 writer.write(queue.poll() + "\n");
             }
-            System.out.println("Berhasil menyimpan " + outputFileName);
+            System.out.println("Terbuat" + outputFileName);
 
         } catch (IOException e) {
             System.out.println("Terjadi kesalahan saat menulis ke file: " + e.getMessage());
